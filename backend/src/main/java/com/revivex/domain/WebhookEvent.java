@@ -1,0 +1,4 @@
+package com.revivex.domain;
+import jakarta.persistence.*; import java.time.Instant;
+@Entity @Table(name="webhook_events", uniqueConstraints=@UniqueConstraint(name="uk_webhook_event", columnNames="eventKey"))
+public class WebhookEvent { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; private String eventKey; private String eventType; private Instant receivedAt; @Column(length=4000) private String payload; public WebhookEvent(){} public WebhookEvent(String key,String type,String body){eventKey=key;eventType=type;payload=body;receivedAt=Instant.now();} public Long getId(){return id;} public String getEventKey(){return eventKey;} public String getEventType(){return eventType;} public Instant getReceivedAt(){return receivedAt;} public String getPayload(){return payload;} }

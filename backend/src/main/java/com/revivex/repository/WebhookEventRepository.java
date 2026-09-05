@@ -1,0 +1,1 @@
+package com.revivex.repository; import com.revivex.domain.WebhookEvent; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface WebhookEventRepository extends JpaRepository<WebhookEvent,Long>{Optional<WebhookEvent> findByEventKey(String key);}
