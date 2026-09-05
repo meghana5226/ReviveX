@@ -1,1 +1,0 @@
-package com.revivex.service; import com.revivex.domain.*; public interface RecoveryExecutionAdapter { ExecutionResult execute(RecoveryCase c,RecoveryAction a); ExecutionResult reconcile(RecoveryAction a); String mode(); record ExecutionResult(String status,String providerReference,String shortUrl,java.math.BigDecimal recovered,String message){} }
